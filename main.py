@@ -4,6 +4,7 @@
 # Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 import asyncio
 from api import run_api
+from database.database_connection import connect_database
 
 
 def print_hi(name):
@@ -11,6 +12,7 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
 
 async def main():
+    await connect_database()
     await run_api()
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
